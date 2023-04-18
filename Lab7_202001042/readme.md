@@ -69,14 +69,14 @@ Based on these boundary test cases, we can design the following test cases:
 |Valid input: day=31, month=12, year=2015|	Previous date|
 |Invalid input: day=0, month=6, year=2000|	An error message|
 |Invalid input: day=32, month=6, year=2000|	An error message|
-|Invalid input: day=29, month=2, year=2000|	An error message|
+|Invalid input: day=29, month=2, year=1900|	An error message|
 |Valid input: day=1, month=6, year=2000|	Previous date|
 |Valid input: day=31, month=5, year=2000|	Previous date|
 |Valid input: day=15, month=6, year=2000|	Previous date|
 |Invalid input: day=31, month=4, year=2000|	An error message|
 
-
-***Program 1: The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.***
+## Program 1
+** The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.**
 
 ```
 int linearSearch(int v, int a[])
