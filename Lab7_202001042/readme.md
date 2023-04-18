@@ -44,9 +44,9 @@ Equivalence Partitioning Test Cases:
 |-----------------------------|--------------------|
 |Valid input: day=1, month=1, year=1900 |	Invalid date|
 |Valid input: day=31, month=12, year=2015|	Previous date|
-|Invalid input: day=0, month=6, year=2000|	An error message|
-|Invalid input: day=32, month=6, year=2000|	An error message|
-|Invalid input: day=29, month=2, year=2001|	An error message|
+|Invalid input: day=0, month=12, year=2000|	An error message|
+|Invalid input: day=1, month=13, year=2000|	An error message|
+|Invalid input: day=9, month=11, year=2016|	An error message|
 
 
 Boundary Value Analysis: Using boundary value analysis, we can identify the following boundary test cases:
@@ -76,7 +76,7 @@ Based on these boundary test cases, we can design the following test cases:
 |Invalid input: day=31, month=4, year=2000|	An error message|
 
 
-**Program 1: The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.**
+***Program 1: The function linearSearch searches for a value v in an array of integers a. If v appears in the array a, then the function returns the first index i, such that a[i] == v; otherwise, -1 is returned.***
 
 ```
 int linearSearch(int v, int a[])
