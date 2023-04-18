@@ -49,17 +49,6 @@ Equivalence Partitioning Test Cases:
 |Invalid input: day=9, month=11, year=2016|	An error message|
 
 
-Boundary Value Analysis: Using boundary value analysis, we can identify the following boundary test cases:
-
-    (1) The earliest possible date: (1, 1, 1900)
-    (2) The latest possible date: (31, 12, 2015)
-    (3) The earliest day of each month: (1, 1, 2000), (1, 2, 2000), (1, 3, 2000),..., (1, 12, 2000)
-    (4) The latest day of each month: (31, 1, 2000), (28, 2, 2000), (31, 3, 2000),..., (31, 12, 2000)
-    (5) Leap year day: (29, 2, 2000)
-    (6) Invalid leap year day: (29, 2, 1900)
-    (7) One day before earliest date: (31, 12, 1899)
-    (8) One day after latest date: (1, 1, 2016)
-
 
 Based on these boundary test cases, we can design the following test cases:
 
@@ -94,16 +83,15 @@ int linearSearch(int v, int a[])
 @Test
 public void test() {
     unittesting obj = new unittesting();
-    int[] arr1 = {2, 4, 6, 8, 10};
-    int[] arr2 = {-3, 0, 3, 7, 11};
-    int[] arr3 = {1, 3, 5, 7, 9};
-    int[] arr4 = {};
+    int[] arr1 = {4,3,2};
+    int[] arr2 = {4,2,1};
+    int[] arr3 = {};
+    int[] arr4 = {1,2,3,2,4};
     
-    assertEquals(0, obj.linearSearch(2, arr1));
-    assertEquals(4, obj.linearSearch(10, arr1));
+    assertEquals(2, obj.linearSearch(2, arr1));
     assertEquals(-1, obj.linearSearch(3, arr2));
-    assertEquals(4, obj.linearSearch(9, arr3));
-    assertEquals(-1, obj.linearSearch(2, arr4));
+    assertEquals(-1, obj.linearSearch(4, arr3));
+    assertEquals(1, obj.linearSearch(2, arr4));
 }
 ```
 **Equivalence Partitioning:**
@@ -130,16 +118,15 @@ public void test() {
 | [1, 2, 3, 4, 5] |	3 |	2|
 |[5, 10, 15, 20, 25]	|5|	0|
 |[2, 4, 6, 8]	|5	|-1|
-|[1, 3, 5, 7]	|4	|-1|
 |Boundary Value Analysis:	|  | |	
 |[]	|5|	-1|
 |[5]|	5|	0|
 |[15]|	5|	-1|
 |[5, 10, 15, 20, 25]|	5|	0|
 |[5, 10, 15, 20, 25]|	25|	4|
-|[2, 4, 6, 8]|	2.2	|Invalid input|
-|[2, 4, 6, 8]|	a	|Invalid input|
-|[1.1, c, 5, 7]|	2|	Invalid input|
+|[2, 4, 6]|	2.2	|Invalid input|
+|[2, 4, 6]|	a	|Invalid input|
+|[1.1, c, 5]|	2|	Invalid input|
 
 
 **Program 2: The function countItem returns the number of times a value v appears in an array of integers a.**
